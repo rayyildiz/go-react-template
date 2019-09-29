@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Menu} from "semantic-ui-react";
+import {Link} from "react-router-dom";
 
 const AppHeader = () => {
   const [activeItem, setActiveItem] = useState('Home');
@@ -12,6 +13,8 @@ const AppHeader = () => {
         name='Home'
         active={activeItem === 'Home'}
         onClick={handleItemClick}
+        as={Link}
+        to='/'
       />
 
       {/*<Menu.Menu position='right'>
@@ -19,6 +22,8 @@ const AppHeader = () => {
           name='Latest News'
           active={activeItem === 'Latest News'}
           onClick={handleItemClick}
+          as={Link}
+          to='/news'
         />
       </Menu.Menu>*/}
     </Menu>

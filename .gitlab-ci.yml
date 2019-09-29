@@ -33,7 +33,7 @@ backend:builds:
 
 frontend:build:
   stage: build
-  image: node:10.15.2
+  image: node:10
   only:
     changes:
       - web/app/**/*

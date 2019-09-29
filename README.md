@@ -1,6 +1,7 @@
 # Go & React Template
 
-A simple template for creating a project. 
+A simple template for creating a go & react project. 
+
 
 ```
 git clone https://github.com/rayyildiz/go-react-template.git my-awesome-app
@@ -10,7 +11,7 @@ make init
 
 
 
-Backend Includes 
+Backend Configured: 
 ---
 
 - [PostreSQL Driver](https://github.com/lib/pq)
@@ -19,7 +20,7 @@ Backend Includes
 - [Go Chi](https://github.com/go-chi/chi) for routing.
 - [Gitlab CI/CD pipeline](https://docs.gitlab.com/ee/ci/pipelines.html)
 
-Fronend Includes:
+Frontend Configured: 
 ---
 
 - [Semantic UI](https://react.semantic-ui.com/)
@@ -30,9 +31,10 @@ Fronend Includes:
 
 ## Configure
 
-Create an empty `.env` file and add your settins:
+Create an `.env` file and add your settings:
 
 ```
+DEBUG=true
 POSTGRES_CONNECTION=postgres://postgres:123456@localhost:5432/postgres?sslmode=disable
 ```
 

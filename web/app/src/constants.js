@@ -6,7 +6,7 @@ const prod = {
 
 const dev = {
   enableSW:false,
-  enableTrackPanel: true,
+  enableTrackPanel: false,
   ga: ''
 };
 

@@ -1,14 +1,15 @@
 package main
 
 import (
+	"net/http"
+	"os"
+	"time"
+
 	"github.com/getsentry/sentry-go"
 	"github.com/go-chi/chi"
 	"github.com/joho/godotenv"
 	"go.uber.org/zap"
-	"net/http"
-	"os"
-	"rayyildiz.dev/app/internal/infra"
-	"time"
+	"rayyildiz.dev/app/internal/infra" // FIXME if your change your module name in `go.mod` file, don't forget to change import
 )
 
 func init() {
