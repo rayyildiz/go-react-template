@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: db
+    image: postgres:11
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "123456"
+      POSTGRES_DB: "postgres"

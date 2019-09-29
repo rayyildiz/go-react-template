@@ -1,0 +1,78 @@
+stages:
+  - build
+  - deploy
+
+backend:builds:
+  stage: build
+  image: golang:1.13
+  only:
+    changes:
+      - main.go
+      - cmd/**/*
+      - internal/**/*
+      - pkg/**/*
+      - deployments/backend/*
+  services:
+    - postgres:11
+  variables:
+    POSTGRES_USER: "postgres"
+    POSTGRES_PASSWORD: "123456"
+    POSTGRES_DB: "postgres"
+    POSTGRES_CONNECTION: "postgres://postgres:123456@postgres:5432/postgres?sslmode=disable"
+  cache:
+    paths:
+      - /usr/local/go/
+  before_script:
+    - cd /builds/${CI_PROJECT_PATH}/
+    - go get .
+  script:
+    - go test -cover -race -v . ./pkg/... ./internal/...
+  artifacts:
+    paths:
+      - /builds/${CI_PROJECT_PATH}/dist
+
+frontend:build:
+  stage: build
+  image: node:10.15.2
+  only:
+    changes:
+      - web/app/**/*
+      - deployments/frontend/*
+  cache:
+    paths:
+      - /builds/${CI_PROJECT_PATH}/web/app/node_modules/
+  before_script:
+    - cd /builds/${CI_PROJECT_PATH}/web/app
+  script:
+    - yarn
+    - yarn build
+  artifacts:
+    paths:
+      - /builds/${CI_PROJECT_PATH}/web/app/build
+
+
+deploy:backend:
+  image: docker:stable
+  stage: deploy
+  when: manual
+  services:
+    - docker:dind
+  before_script:
+    - echo "Define your private registry credentials"
+    # - docker login YOUR.CONTAINER_REGISTRY.URL -u ${CR_USER} -p ${CR_PWD}
+  script:
+    - docker build -t rayyildiz/backend -f deployments/api/Dockerfile .
+    - docker push rayyildiz/backend
+
+deploy:frontend:
+  image: docker:stable
+  stage: deploy
+  when: manual
+  services:
+    - docker:dind
+  before_script:
+    - echo "Define your private registry credentials"
+    # - docker login YOUR.CONTAINER_REGISTRY.URL -u ${CR_USER} -p ${CR_PWD}
+  script:
+    - docker build -t rayyildiz/frontend -f deployments/frontend/Dockerfile .
+    - docker push rayyildiz/frontend
