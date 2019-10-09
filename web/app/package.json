@@ -6,12 +6,12 @@
   "dependencies": {
     "history": "^4.10.1",
     "prop-types": "^15.7.2",
-    "react": "^16.10.1",
+    "react": "^16.10.2",
     "react-cookie-consent": "^2.5.0",
     "react-device-detect": "^1.9.10",
-    "react-dom": "^16.10.1",
-    "react-ga": "^2.6.0",
-    "react-router-dom": "^5.1.1",
+    "react-dom": "^16.10.2",
+    "react-ga": "^2.7.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1"
@@ -20,7 +20,8 @@
     "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "package:upgrade": "yarn upgrade && syncyarnlock -s -k"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "syncyarnlock": "^1.0.19"
   }
 }

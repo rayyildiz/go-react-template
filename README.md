@@ -14,7 +14,8 @@ make init
 Backend Configured: 
 ---
 
-- [PostreSQL Driver](https://github.com/lib/pq)
+- [PostreSQL](https://github.com/lib/pq)
+- [Go Cloud](https://gocloud.dev/) 
 - [Zap Logger](https://github.com/uber-go/zap) with [Sentry support](https://github.com/getsentry/sentry-go)
 - [fresh](https://github.com/gravityblast/fresh) for hot relading.
 - [Go Chi](https://github.com/go-chi/chi) for routing.
