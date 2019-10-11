@@ -11,17 +11,17 @@ make init
 
 
 
-Backend Configured: 
+Backend: 
 ---
 
 - [PostreSQL](https://github.com/lib/pq)
-- [Go Cloud](https://gocloud.dev/) 
+- [GoCloud](https://gocloud.dev/) 
 - [Zap Logger](https://github.com/uber-go/zap) with [Sentry support](https://github.com/getsentry/sentry-go)
-- [fresh](https://github.com/gravityblast/fresh) for hot relading.
-- [Go Chi](https://github.com/go-chi/chi) for routing.
+- [fresh](https://github.com/gravityblast/fresh) for hot reloding.
+- [Go-Chi](https://github.com/go-chi/chi) for routing.
 - [Gitlab CI/CD pipeline](https://docs.gitlab.com/ee/ci/pipelines.html)
 
-Frontend Configured: 
+Frontend: 
 ---
 
 - [Semantic UI](https://react.semantic-ui.com/)
@@ -32,7 +32,7 @@ Frontend Configured:
 
 ## Configure
 
-Create an `.env` file and add your settings:
+Create an `.env` file and add your settings. Or run `make clean` to remove `.git` folder and create an empty `.env` file.
 
 ```
 DEBUG=true
