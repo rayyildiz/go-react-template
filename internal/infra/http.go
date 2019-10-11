@@ -1,14 +1,14 @@
 package infra
 
 import (
+	"time"
+
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-	"time"
 )
 
 func NewRouter() *chi.Mux {
 	r := chi.NewRouter()
-	r.Use(middleware.Compress(6))
 
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)

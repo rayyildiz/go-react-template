@@ -5,7 +5,7 @@ init:
 
 clean:
 	rm -rf .git
-	tocuh .env
+	touch .env
 
 start_frontend:
 	cd  web/app && yarn start 
