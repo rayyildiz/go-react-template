@@ -3,14 +3,13 @@ package infra
 import (
 	"database/sql"
 	"errors"
+
 	_ "github.com/lib/pq"
-	"os"
 )
 
-func NewDatabase() (*sql.DB, error) {
-	connStr := os.Getenv("POSTGRES_CONNECTION")
+func NewDatabase(connStr string) (*sql.DB, error) {
 	if connStr == "" {
-		return nil, errors.New("please provide system env variables: POSTGRES_CONNECTION_STRING")
+		return nil, errors.New("please provide a db connection string")
 	}
 
 	// postgres://postgres:123456@localhost/postgres?sslmode=disable

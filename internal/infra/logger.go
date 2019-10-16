@@ -1,14 +1,15 @@
 package infra
 
 import (
+	"os"
+
 	"github.com/getsentry/sentry-go"
 	"go.uber.org/zap"
-	"os"
 )
 
-func NewLogger() *zap.Logger {
+func NewLogger(debug bool) *zap.Logger {
 	var logger *zap.Logger
-	if os.Getenv("DEBUG") == "true" {
+	if debug {
 		logger, _ = zap.NewDevelopment()
 	} else {
 		logger, _ = zap.NewProduction()

@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "package:upgrade": "yarn upgrade && syncyarnlock -s -k"
+    "packages:upgrade": "yarn upgrade && syncyarnlock -s -k"
   },
   "eslintConfig": {
     "extends": "react-app"
