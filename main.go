@@ -20,7 +20,7 @@ func init() {
 
 func main() {
 	var spec infra.Specification
-	err := envconfig.Process("gags", &spec)
+	err := envconfig.Process("app", &spec)
 	if err != nil {
 		fmt.Printf("could not load config, %v", err)
 		os.Exit(1)
@@ -28,7 +28,7 @@ func main() {
 
 	log := infra.NewLogger(spec.Debug)
 	defer sentry.Flush(time.Second * 5)
-	db, err := infra.NewDatabase(spec.PostgresConenction)
+	db, err := infra.NewDatabase(spec.PostgresConnection)
 	if err != nil {
 		log.Fatal("could not initialize database", zap.Error(err))
 	}

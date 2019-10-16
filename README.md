@@ -32,10 +32,10 @@ Frontend:
 
 ## Configure
 
-Create an `.env` file and add your settings. Or run `make clean` to remove `.git` folder and create an empty `.env` file.
+Create an `.env` file and add your settings. Or run `make clean` to remove `.git` folder and create an empty `.env` file. [More information](https://github.com/kelseyhightower/envconfig)
 
 ```
-DEBUG=true
-POSTGRES_CONNECTION=postgres://postgres:123456@localhost:5432/postgres?sslmode=disable
+APP_DEBUG=true
+APP_POSTGRES_CONNECTION=postgres://postgres:123456@localhost:5432/postgres?sslmode=disable
 ```
 
