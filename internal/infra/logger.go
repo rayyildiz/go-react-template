@@ -1,6 +1,7 @@
 package infra
 
 import (
+	"net/http"
 	"os"
 
 	"github.com/getsentry/sentry-go"
@@ -30,5 +31,11 @@ func initializeSentry(log *zap.Logger) {
 		if err != nil {
 			log.Error("could not initialize sentry", zap.Error(err))
 		}
+	}
+}
+
+func CaptureException(request *http.Request, err error) {
+	if hub := sentry.GetHubFromContext(request.Context()); hub != nil {
+		hub.CaptureException(err)
 	}
 }
