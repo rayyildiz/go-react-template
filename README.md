@@ -1,4 +1,6 @@
 # Go & React Template
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frayyildiz%2Fgo-react-template.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Frayyildiz%2Fgo-react-template?ref=badge_shield)
+
 
 A simple template for creating a go & react project. 
 
@@ -39,3 +41,7 @@ APP_DEBUG=true
 APP_POSTGRES_CONNECTION=postgres://postgres:123456@localhost:5432/postgres?sslmode=disable
 ```
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frayyildiz%2Fgo-react-template.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Frayyildiz%2Fgo-react-template?ref=badge_large)
