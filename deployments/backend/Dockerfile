@@ -13,8 +13,8 @@ ADD . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app main.go
 RUN upx app
 
-FROM drone/ca-certs
+FROM rayyildiz/ca-certificates
 
-COPY --from=builder /source/app /app
+COPY --from=builder /source/app .
 
-CMD ["/app"]
+CMD ["/apps/app"]
