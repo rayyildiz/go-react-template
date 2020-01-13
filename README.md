@@ -10,8 +10,6 @@ cd my-awesome-app
 make init
 ```
 
-
-
 Backend: 
 ---
 
@@ -19,16 +17,16 @@ Backend:
 - [GoCloud](https://gocloud.dev/) 
 - [Zap Logger](https://github.com/uber-go/zap) with [Sentry support](https://github.com/getsentry/sentry-go)
 - [fresh](https://github.com/gravityblast/fresh) for hot reloding.
-- [Go-Chi](https://github.com/go-chi/chi) for routing.
-- [Gitlab CI/CD pipeline](https://docs.gitlab.com/ee/ci/pipelines.html)
+- [Echo](https://echo.labstack.com/) for routing.
+- [Google Cloud Build](https://cloud.google.com/cloud-build)
 
 Frontend: 
 ---
 
-- [Semantic UI](https://react.semantic-ui.com/)
-- [Cookie Consent](https://www.npmjs.com/package/react-cookie-consent) 
+- [Material UI](https://material-ui.com/)
+- Typescript 
 - React Router Dom
-- Google Analytic
+- [Register](web/app/src/Pages/Auth/RegisterPage.tsx), [Login](web/app/src/Pages/Auth/LoginPage.tsx), [Forget Password](web/app/src/Pages/Auth/ForgetPasswordPage.tsx) pages
 
 
 ## Configure
@@ -36,6 +34,18 @@ Frontend:
 Create an `.env` file and add your settings. Or run `make clean` to remove `.git` folder and create an empty `.env` file. [More information](https://github.com/kelseyhightower/envconfig)
 
 ```
-APP_DEBUG=true
-APP_POSTGRES_CONNECTION=postgres://postgres:123456@localhost:5432/postgres?sslmode=disable
+DEBUG=true
+POSTGRES_CONNECTION=postgres://postgres:123456@localhost:5432/postgres?sslmode=disable
 ```
+
+
+# Cloud Run
+
+Configure and connect to your source code with [Google CLoud Build](https://console.cloud.google.com/cloud-build/builds) .
+
+
+Useful articles:
+
+- <https://cloud.google.com/run/docs/quickstarts/build-and-deploy> 
+- <https://medium.com/google-cloud/google-cloud-run-for-go-ec09ddbba111> 
+- <https://github.com/ahmetb/cloud-run-faq>

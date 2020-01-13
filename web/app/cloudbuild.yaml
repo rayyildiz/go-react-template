@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/yarn'
+    args: ['install']
+    dir: 'web/app'
+  - name: 'gcr.io/cloud-builders/yarn'
+    args: ['build']
+    dir: 'web/app'
+#  - name: 'gcr.io/cloud-builders/gsutil'
+#    args: ['rsync', '-R', 'build','gs://your-public-bucket.com']
+#    dir: 'web/app'
+
