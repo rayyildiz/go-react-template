@@ -1,0 +1,15 @@
+steps:
+  - name: 'golang'
+    args: ['go', 'test','-cover','./...']
+  - name: 'golang'
+    args: ['go', 'build', '-a', '-installsuffix','cgo', '-o' ,'tmp/worker','.']
+    env: ['GO111MODULE=on','CGO_ENABLED=0','GOOS=linux']
+    dir: 'cmd/api'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-f', 'Dockerfile', '--tag=eu.gcr.io/$PROJECT_ID/worker:$SHORT_SHA', '.']
+    dir: 'cmd/api'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'eu.gcr.io/$PROJECT_ID/worker:$SHORT_SHA']
+    dir: 'src/api'
+#  - name: 'gcr.io/cloud-builders/gcloud'
+#    args: ['run','deploy','worker','--image','eu.gcr.io/$PROJECT_ID/worker:$SHORT_SHA', '--platform', 'managed','--region','europe-west1']
