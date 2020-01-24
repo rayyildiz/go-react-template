@@ -8,5 +8,5 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "123456"
+      POSTGRES_PASSWORD: "postgres"
       POSTGRES_DB: "postgres"

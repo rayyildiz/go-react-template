@@ -23,6 +23,28 @@ func NewLogger() *zap.Logger {
 	return logger
 }
 
+func InitTrace(log *zap.Logger, e *echo.Echo) {
+	projectId := os.Getenv("PROJECT_ID")
+
+	if os.Getenv("TRACE_ENABLED") == "true" && len(projectId) > 0 {
+		log.Info("opencensus is enabled")
+		exporter, err := stackdriver.NewExporter(stackdriver.Options{
+			ProjectID: projectId,
+		})
+		if err == nil {
+			trace.RegisterExporter(exporter)
+		} else {
+			log.Error("infra:InitTrace", zap.Error(err))
+		}
+		trace.ApplyConfig(trace.Config{DefaultSampler: trace.AlwaysSample()})
+
+		e.Use(newCensus())
+
+		var ocHandler = &ochttp.Handler{Handler: e, IsPublicEndpoint: true}
+		e.Server.Handler = ocHandler
+	}
+}
+
 func zapLogger(log *zap.Logger) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
@@ -68,27 +90,5 @@ func zapLogger(log *zap.Logger) echo.MiddlewareFunc {
 
 			return nil
 		}
-	}
-}
-
-func InitTrace(log *zap.Logger, e *echo.Echo) {
-	projectId := os.Getenv("PROJECT_ID")
-
-	if os.Getenv("TRACE_ENABLED") == "true" && len(projectId) > 0 {
-		log.Info("opencensus is enabled")
-		exporter, err := stackdriver.NewExporter(stackdriver.Options{
-			ProjectID: projectId,
-		})
-		if err == nil {
-			trace.RegisterExporter(exporter)
-		} else {
-			log.Error("infra:InitTrace", zap.Error(err))
-		}
-		trace.ApplyConfig(trace.Config{DefaultSampler: trace.AlwaysSample()})
-
-		e.Use(newCensus())
-
-		var ocHandler = &ochttp.Handler{Handler: e, IsPublicEndpoint: true}
-		e.Server.Handler = ocHandler
 	}
 }

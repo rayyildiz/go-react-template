@@ -1,17 +1,15 @@
+.PHONY: clean init
+
 init:
 	go mod download
-	go get github.com/pilu/fresh
 	cd  web/app && yarn 
 
 clean:
 	rm -rf .git
 	touch .env
 
-start_frontend:
+start:
 	cd  web/app && yarn start 
-
-start_backend:
-	fresh
 
 build:
 	docker build -t myApp/backend -f deployment/backend/Dockerfile .
