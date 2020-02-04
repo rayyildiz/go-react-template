@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/getsentry/sentry-go"
 	"github.com/joho/godotenv"
+	"go.rayyildiz.dev/app/internal/infra"
 	"go.uber.org/zap"
 	"os"
-	"rayyildiz.dev/app/internal/infra"
 	"time"
 )
 

@@ -3,7 +3,6 @@ package infra
 import (
 	"database/sql"
 	"errors"
-
 	_ "github.com/lib/pq"
 )
 

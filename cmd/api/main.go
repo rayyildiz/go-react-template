@@ -3,10 +3,10 @@ package main
 import (
 	"github.com/getsentry/sentry-go"
 	"github.com/joho/godotenv"
+	"go.rayyildiz.dev/app/internal/infra"
+	"go.rayyildiz.dev/app/pkg/auth"
 	"go.uber.org/zap"
 	"os"
-	"rayyildiz.dev/app/internal/infra"
-	"rayyildiz.dev/app/pkg/auth"
 	"time"
 )
 
