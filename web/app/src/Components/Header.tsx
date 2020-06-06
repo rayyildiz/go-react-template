@@ -31,9 +31,10 @@ export const Header = () => {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <HomeIcon onClick={() => history.push("/")}/>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => history.push("/")}>
+              <HomeIcon />
             </IconButton>
+            
             <Typography variant="h6" className={classes.title} onClick={() => history.push("/")}>
               Go React Template
             </Typography>

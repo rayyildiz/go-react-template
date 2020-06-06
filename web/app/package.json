@@ -4,15 +4,15 @@
   "private": true,
   "proxy": "http://localhost:4000",
   "dependencies": {
-    "@material-ui/core": "^4.9.10",
+    "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.49",
+    "@material-ui/lab": "^4.0.0-alpha.55",
     "@material-ui/styles": "^4.9.10",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.35",
+    "@types/node": "^12.12.44",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/react-router-dom": "^5.1.4",
@@ -48,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
-    "syncyarnlock": "^1.0.19"
+    "dotenv": "^8.2.0"
   }
 }
