@@ -2,7 +2,7 @@ version: '3'
 
 services:
   postgres:
-    container_name: db
+    container_name: app_db
     image: postgres:11
     ports:
       - "5432:5432"
@@ -10,3 +10,9 @@ services:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
       POSTGRES_DB: "postgres"
+    volumes:
+      - appdb_data:/var/lib/postgresql/data
+      - 
+
+volumes:
+  appdb_data: {}

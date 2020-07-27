@@ -7,37 +7,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Check out the code
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
-      - name: Set up Go 1.14
-        uses: actions/setup-go@v1
+      - uses: actions/setup-go@v1
         with:
           go-version: 1.14
-        id: go
-      
-      - name: Set up Nodejs 12.x
-        uses: actions/setup-node@v1
+        
+      - uses: actions/setup-node@v1
         with:
           node-version: 12.x
         
-      - name: Go get dependencies
-        working-directory: ./
-        run: go mod download
+      - run: go mod download
         
-      - name: Npm get dependencies
+      - run: npm ci
         working-directory: ./web/app
-        run: npm ci
 
-      - name: Go Test
-        working-directory: ./
-        run: go test -cover -coverprofile=coverage.txt -covermode=atomic ./...
+      - run: go test -cover -coverprofile=coverage.txt -covermode=atomic ./...
 
       # create a CODECOV_TOKEN secret. see https://github.com/marketplace/actions/codecov
       #- uses: codecov/codecov-action@v1
       #  with:
       #    token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
 
-      - name: Npm build
+      - run: npm run build
         working-directory: ./web/app
-        run: npm run build

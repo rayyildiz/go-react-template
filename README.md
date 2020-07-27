@@ -1,11 +1,11 @@
 # Go & React Template
 
+![ci](https://github.com/rayyildiz/go-react-template/workflows/ci/badge.svg)
+
 
 Simple template for creating [go](https://golang.org) & [react js](https://reactjs.org/) project. 
 
-![Build status](https://github.com/rayyildiz/go-react-template/workflows/ci/badge.svg)
-
-```
+```bash
 git clone https://github.com/rayyildiz/go-react-template.git my-awesome-app
 cd my-awesome-app
 make
