@@ -1,4 +1,3 @@
-import React from 'react';
 import {BrowserRouter} from "react-router-dom";
 import {Container, createStyles, CssBaseline, makeStyles, Theme, ThemeProvider} from "@material-ui/core";
 import {AppRoutes} from "./App.Routes";

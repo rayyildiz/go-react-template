@@ -1,4 +1,4 @@
-import React, {FC, FormEvent, useState} from "react";
+import {FC, FormEvent, useState} from "react";
 import {useLoginStyles} from "./Styles";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';

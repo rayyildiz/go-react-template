@@ -1,23 +1,20 @@
 module go.rayyildiz.dev/app
 
-go 1.15
+go 1.16
 
 require (
-	cloud.google.com/go v0.76.0 // indirect
 	contrib.go.opencensus.io/exporter/stackdriver v0.13.5
-	github.com/aws/aws-sdk-go v1.37.4 // indirect
-	github.com/getsentry/sentry-go v0.9.0
+	github.com/getsentry/sentry-go v0.11.0
 	github.com/joho/godotenv v1.3.0
-	github.com/kr/text v0.2.0 // indirect
-	github.com/labstack/echo/v4 v4.1.16
-	github.com/lib/pq v1.9.0
-	github.com/mattn/go-colorable v0.1.7 // indirect
-	github.com/valyala/fasttemplate v1.2.0 // indirect
-	go.opencensus.io v0.22.6
-	go.uber.org/multierr v1.6.0 // indirect
-	go.uber.org/zap v1.16.0
-	gocloud.dev v0.21.0
-	golang.org/x/oauth2 v0.0.0-20210201163806-010130855d6c // indirect
-	google.golang.org/api v0.39.0 // indirect
-	google.golang.org/genproto v0.0.0-20210204154452-deb828366460 // indirect
+	github.com/labstack/echo/v4 v4.3.0
+	github.com/lib/pq v1.10.2
+	github.com/mattn/go-isatty v0.0.13 // indirect
+	go.opencensus.io v0.23.0
+	go.uber.org/atomic v1.8.0 // indirect
+	go.uber.org/multierr v1.7.0 // indirect
+	go.uber.org/zap v1.17.0
+	gocloud.dev v0.23.0
+	golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a // indirect
+	golang.org/x/net v0.0.0-20210525063256-abc453219eb5 // indirect
+	golang.org/x/sys v0.0.0-20210608053332-aa57babbf139 // indirect
 )

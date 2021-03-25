@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import {FC} from "react";
 import {Route, Switch} from "react-router-dom";
 import {IndexPage} from "./Pages/IndexPage";
 import {LoginPage} from "./Pages/Auth/LoginPage";

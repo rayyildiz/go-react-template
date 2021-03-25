@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 export const PrivacyPage = () => (
     <div>
       <h3>What are cookies?</h3>
