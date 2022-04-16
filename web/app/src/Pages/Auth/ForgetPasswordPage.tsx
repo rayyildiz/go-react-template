@@ -35,7 +35,7 @@ export const ForgetPasswordPage: FC<ForgetPasswordPageProps> = (props) => {
       });
       console.log("Response ", response.parsedBody)
     } catch (ex) {
-      setError(ex.toString());
+      if (ex instanceof Error) setError(ex.toString());
     } finally {
       setLoading(false);
     }

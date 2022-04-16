@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Route, Switch} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {IndexPage} from "./Pages/IndexPage";
 import {LoginPage} from "./Pages/Auth/LoginPage";
 import {RegisterPage} from "./Pages/Auth/RegisterPage";
@@ -10,12 +10,12 @@ type AppRoutesProps = {}
 
 export const AppRoutes: FC<AppRoutesProps> = (props) => {
   return (
-      <Switch>
-        <Route exact={true} path="/" component={IndexPage}/>
-        <Route path='/login' component={LoginPage}/>
-        <Route path='/signup' component={RegisterPage}/>
-        <Route path='/forget-password' component={ForgetPasswordPage}/>
-        <Route path='/privacy' component={PrivacyPage}/>
-      </Switch>
+      <Routes>
+        <Route path="/" children={<IndexPage />}/>
+        <Route path='/login' children={<LoginPage />}/>
+        <Route path='/signup' children={<RegisterPage />}/>
+        <Route path='/forget-password' children={<ForgetPasswordPage />}/>
+        <Route path='/privacy' children={<PrivacyPage />}/>
+      </Routes>
   )
 };
