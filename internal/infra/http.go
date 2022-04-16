@@ -1,14 +1,15 @@
 package infra
 
 import (
+	"net/http"
+	"os"
+
 	"github.com/getsentry/sentry-go"
 	sentryecho "github.com/getsentry/sentry-go/echo"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"go.opencensus.io/plugin/ochttp"
 	"go.uber.org/zap"
-	"net/http"
-	"os"
 )
 
 func NewHttpRouter(log *zap.Logger) *echo.Echo {
